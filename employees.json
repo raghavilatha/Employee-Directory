@@ -1,0 +1,5 @@
+[
+ {"id":101,"name":"John Doe","department":"HR","status":"Active"},
+ {"id":102,"name":"Alice Smith","department":"IT","status":"Active"},
+ {"id":103,"name":"Maria Garcia","department":"Finance","status":"Inactive"}
+]
