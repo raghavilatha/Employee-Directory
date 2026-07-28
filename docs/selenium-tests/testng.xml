@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="EmployeeDirectorySuite" verbose="1">
+    <test name="PageLoadRendering">
+        <classes>
+            <class name="com.employeedirectory.tests.PageLoadRenderingTest"/>
+        </classes>
+    </test>
+    <test name="SearchByName">
+        <classes>
+            <class name="com.employeedirectory.tests.SearchByNameTest"/>
+        </classes>
+    </test>
+    <test name="SearchByDepartment">
+        <classes>
+            <class name="com.employeedirectory.tests.SearchByDepartmentTest"/>
+        </classes>
+    </test>
+    <test name="SearchEdgeCases">
+        <classes>
+            <class name="com.employeedirectory.tests.SearchEdgeCasesTest"/>
+        </classes>
+    </test>
+</suite>
