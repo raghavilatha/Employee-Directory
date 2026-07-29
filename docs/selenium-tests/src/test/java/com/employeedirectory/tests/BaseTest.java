@@ -17,6 +17,7 @@ import java.io.FileInputStream;
 import java.net.InetSocketAddress;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * Common test setup: launches headless Chrome and serves the app under test
@@ -82,24 +83,22 @@ public abstract class BaseTest {
      * "app.dir" system property (-Dapp.dir=/absolute/path).
      */
     private static Path resolveAppDir() {
-        String override = System.getProperty("app.dir");
-        if (override != null && !override.isEmpty()) {
-            return Path.of(override);
-        }
-        Path fromModuleRoot = Path.of("").toAbsolutePath()
-                .resolve("../../employee-directory-brownfield").normalize();
-        if (Files.exists(fromModuleRoot.resolve("index.html"))) {
-            return fromModuleRoot;
-        }
-        Path fromRepoRoot = Path.of("").toAbsolutePath()
-                .resolve("employee-directory-brownfield").normalize();
-        if (Files.exists(fromRepoRoot.resolve("index.html"))) {
-            return fromRepoRoot;
-        }
+
+    String appDir = System.getProperty("app.dir");
+
+    Path root = (appDir != null && !appDir.isBlank())
+            ? Paths.get(appDir)
+            : Paths.get("").toAbsolutePath();
+
+    Path indexFile = root.resolve("index.html");
+
+    if (!Files.exists(indexFile)) {
         throw new IllegalStateException(
-                "Could not locate employee-directory-brownfield/index.html. "
-                        + "Pass -Dapp.dir=<absolute path to employee-directory-brownfield>");
+                "Could not locate index.html under " + root);
     }
+
+    return root;
+}
 
     private static HttpHandler staticFileHandler(Path appDir) {
         return (HttpExchange exchange) -> {
