@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>20/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jul 30 10:54:30 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>33 seconds (33188 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByNameTest.partialNameMatchFirstNameOnly()'><b>partialNameMatchFirstNameOnly</b><br>Test class: com.employeedirectory.tests.SearchByNameTest<br>Test method: SN-04: Partial name match, first name only</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByNameTest@5223e5ee</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByNameTest.partialNameMatchLastNameOnly()'><b>partialNameMatchLastNameOnly</b><br>Test class: com.employeedirectory.tests.SearchByNameTest<br>Test method: SN-05: Partial name match, last name only</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByNameTest@5223e5ee</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByDepartmentTest.partialDepartmentSubstringMatch()'><b>partialDepartmentSubstringMatch</b><br>Test class: com.employeedirectory.tests.SearchByDepartmentTest<br>Test method: SD-03: Partial department substring match</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByDepartmentTest@5be6e01c</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchEdgeCasesTest.clearingSearchAfterNoMatchRestoresFullList()'><b>clearingSearchAfterNoMatchRestoresFullList</b><br>Test class: com.employeedirectory.tests.SearchEdgeCasesTest<br>Test method: SE-07: Clearing search after no-match state restores full list</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchEdgeCasesTest@bef2d72</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByDepartmentTest.exactDepartmentMatchSingleResult()'><b>exactDepartmentMatchSingleResult</b><br>Test class: com.employeedirectory.tests.SearchByDepartmentTest<br>Test method: SD-01: Exact department match, single result</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByDepartmentTest@5be6e01c</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByDepartmentTest.exactDepartmentMatchCaseInsensitive()'><b>exactDepartmentMatchCaseInsensitive</b><br>Test class: com.employeedirectory.tests.SearchByDepartmentTest<br>Test method: SD-02: Exact department match, case-insensitive</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByDepartmentTest@5be6e01c</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchEdgeCasesTest.leadingTrailingSpacesAroundValidTermNoMatch()'><b>leadingTrailingSpacesAroundValidTermNoMatch</b><br>Test class: com.employeedirectory.tests.SearchEdgeCasesTest<br>Test method: SE-08: Leading/trailing spaces around a valid term reduce/change match</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchEdgeCasesTest@bef2d72</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByNameTest.fullNameCaseInsensitiveMatch()'><b>fullNameCaseInsensitiveMatch</b><br>Test class: com.employeedirectory.tests.SearchByNameTest<br>Test method: SN-02: Full name, case-insensitive match</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByNameTest@5223e5ee</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchEdgeCasesTest.emptyQueryShowsFullList()'><b>emptyQueryShowsFullList</b><br>Test class: com.employeedirectory.tests.SearchEdgeCasesTest<br>Test method: SE-01: Empty query shows full list</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchEdgeCasesTest@bef2d72</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchEdgeCasesTest.numericQueryDoesNotMatchOnId()'><b>numericQueryDoesNotMatchOnId</b><br>Test class: com.employeedirectory.tests.SearchEdgeCasesTest<br>Test method: SE-05: Numeric query does not match on id</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchEdgeCasesTest@bef2d72</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByNameTest.nameSubstringWithNoMatchReturnsEmpty()'><b>nameSubstringWithNoMatchReturnsEmpty</b><br>Test class: com.employeedirectory.tests.SearchByNameTest<br>Test method: SN-07: Name substring shared by no one returns empty</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByNameTest@5223e5ee</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchEdgeCasesTest.queryWithRegexLikeCharactersDoesNotError()'><b>queryWithRegexLikeCharactersDoesNotError</b><br>Test class: com.employeedirectory.tests.SearchEdgeCasesTest<br>Test method: SE-04: Query with special/regex-like characters does not error</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchEdgeCasesTest@bef2d72</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchEdgeCasesTest.queryMatchingMultipleRows()'><b>queryMatchingMultipleRows</b><br>Test class: com.employeedirectory.tests.SearchEdgeCasesTest<br>Test method: SE-03: Query matching multiple rows across name and department</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchEdgeCasesTest@bef2d72</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByDepartmentTest.departmentQueryWithNoMatches()'><b>departmentQueryWithNoMatches</b><br>Test class: com.employeedirectory.tests.SearchByDepartmentTest<br>Test method: SD-05: Department query with no matches</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByDepartmentTest@5be6e01c</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchEdgeCasesTest.progressiveTypingNarrowsResults()'><b>progressiveTypingNarrowsResults</b><br>Test class: com.employeedirectory.tests.SearchEdgeCasesTest<br>Test method: SE-06: Progressive typing narrows results incrementally</td>
+<td></td>
+<td>1</td>
+<td>com.employeedirectory.tests.SearchEdgeCasesTest@bef2d72</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByNameTest.fullNameExactCaseMatch()'><b>fullNameExactCaseMatch</b><br>Test class: com.employeedirectory.tests.SearchByNameTest<br>Test method: SN-01: Full name, exact case match</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByNameTest@5223e5ee</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByNameTest.mixedCasePartialNameMatch()'><b>mixedCasePartialNameMatch</b><br>Test class: com.employeedirectory.tests.SearchByNameTest<br>Test method: SN-06: Mixed-case partial name match</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByNameTest@5223e5ee</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByDepartmentTest.departmentSubstringMatchMixedCase()'><b>departmentSubstringMatchMixedCase</b><br>Test class: com.employeedirectory.tests.SearchByDepartmentTest<br>Test method: SD-04: Department substring match, mixed case</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByDepartmentTest@5be6e01c</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchEdgeCasesTest.whitespaceOnlyQueryReturnsNoMatches()'><b>whitespaceOnlyQueryReturnsNoMatches</b><br>Test class: com.employeedirectory.tests.SearchEdgeCasesTest<br>Test method: SE-02: Whitespace-only query returns no matches</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchEdgeCasesTest@bef2d72</td></tr>
+<tr>
+<td title='com.employeedirectory.tests.SearchByNameTest.partialNameMatchMiddleOfString()'><b>partialNameMatchMiddleOfString</b><br>Test class: com.employeedirectory.tests.SearchByNameTest<br>Test method: SN-03: Partial/substring name match (middle of string)</td>
+<td></td>
+<td>0</td>
+<td>com.employeedirectory.tests.SearchByNameTest@5223e5ee</td></tr>
+</table><p>
+</body>
+</html>

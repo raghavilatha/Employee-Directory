@@ -1,0 +1,7 @@
+com\employeedirectory\pages\DirectoryPage.class
+com\employeedirectory\tests\SearchEdgeCasesTest.class
+com\employeedirectory\tests\PageLoadRenderingTest.class
+com\employeedirectory\tests\SearchByDepartmentTest.class
+com\employeedirectory\tests\BaseTest.class
+com\employeedirectory\tests\SearchByNameTest.class
+com\employeedirectory\tests\BaseTestPathResolutionTest.class

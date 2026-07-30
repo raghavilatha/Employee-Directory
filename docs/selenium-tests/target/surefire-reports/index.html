@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-EmployeeDirectorySuite" class="navigator-link">
+              <span class="suite-name border-passed">EmployeeDirectorySuite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-EmployeeDirectorySuite" class="navigator-link ">
+                    <span>C:\Users\RaghaviAvuduri\Automation\Employee-directory-code\employee-directory-brownfield\docs\selenium-tests\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-EmployeeDirectorySuite" class="navigator-link ">
+                    <span class="test-stats">4 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-EmployeeDirectorySuite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-EmployeeDirectorySuite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-EmployeeDirectorySuite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-EmployeeDirectorySuite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-EmployeeDirectorySuite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">25 methods,   25 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-EmployeeDirectorySuite" class="hide-methods passed suite-EmployeeDirectorySuite"> (hide)</a> <!-- hide-methods passed suite-EmployeeDirectorySuite -->
+                      <a href="#" panel-name="suite-EmployeeDirectorySuite" class="show-methods passed suite-EmployeeDirectorySuite"> (show)</a> <!-- show-methods passed suite-EmployeeDirectorySuite -->
+                    </span>
+                    <div class="method-list-content passed suite-EmployeeDirectorySuite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.PageLoadRenderingTest" class="method navigator-link" hash-for-method="allEmployeesRenderOnInitialLoad">allEmployeesRenderOnInitialLoad</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchEdgeCasesTest" class="method navigator-link" hash-for-method="clearingSearchAfterNoMatchRestoresFullList">clearingSearchAfterNoMatchRestoresFullList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByDepartmentTest" class="method navigator-link" hash-for-method="departmentQueryWithNoMatches">departmentQueryWithNoMatches</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByDepartmentTest" class="method navigator-link" hash-for-method="departmentSubstringMatchMixedCase">departmentSubstringMatchMixedCase</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchEdgeCasesTest" class="method navigator-link" hash-for-method="emptyQueryShowsFullList">emptyQueryShowsFullList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByDepartmentTest" class="method navigator-link" hash-for-method="exactDepartmentMatchCaseInsensitive">exactDepartmentMatchCaseInsensitive</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByDepartmentTest" class="method navigator-link" hash-for-method="exactDepartmentMatchSingleResult">exactDepartmentMatchSingleResult</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByNameTest" class="method navigator-link" hash-for-method="fullNameCaseInsensitiveMatch">fullNameCaseInsensitiveMatch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByNameTest" class="method navigator-link" hash-for-method="fullNameExactCaseMatch">fullNameExactCaseMatch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchEdgeCasesTest" class="method navigator-link" hash-for-method="leadingTrailingSpacesAroundValidTermNoMatch">leadingTrailingSpacesAroundValidTermNoMatch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByNameTest" class="method navigator-link" hash-for-method="mixedCasePartialNameMatch">mixedCasePartialNameMatch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByNameTest" class="method navigator-link" hash-for-method="nameSubstringWithNoMatchReturnsEmpty">nameSubstringWithNoMatchReturnsEmpty</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchEdgeCasesTest" class="method navigator-link" hash-for-method="numericQueryDoesNotMatchOnId">numericQueryDoesNotMatchOnId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.PageLoadRenderingTest" class="method navigator-link" hash-for-method="pageLoadsWithTitleAndSearchBox">pageLoadsWithTitleAndSearchBox</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByDepartmentTest" class="method navigator-link" hash-for-method="partialDepartmentSubstringMatch">partialDepartmentSubstringMatch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByNameTest" class="method navigator-link" hash-for-method="partialNameMatchFirstNameOnly">partialNameMatchFirstNameOnly</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByNameTest" class="method navigator-link" hash-for-method="partialNameMatchLastNameOnly">partialNameMatchLastNameOnly</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchByNameTest" class="method navigator-link" hash-for-method="partialNameMatchMiddleOfString">partialNameMatchMiddleOfString</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchEdgeCasesTest" class="method navigator-link" hash-for-method="progressiveTypingNarrowsResults">progressiveTypingNarrowsResults</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchEdgeCasesTest" class="method navigator-link" hash-for-method="queryMatchingMultipleRows">queryMatchingMultipleRows</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchEdgeCasesTest" class="method navigator-link" hash-for-method="queryWithRegexLikeCharactersDoesNotError">queryWithRegexLikeCharactersDoesNotError</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.PageLoadRenderingTest" class="method navigator-link" hash-for-method="rowCellValuesMatchFixtureData">rowCellValuesMatchFixtureData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.PageLoadRenderingTest" class="method navigator-link" hash-for-method="searchBoxIsEmptyByDefault">searchBoxIsEmptyByDefault</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.PageLoadRenderingTest" class="method navigator-link" hash-for-method="tableHeaderColumnsAreCorrect">tableHeaderColumnsAreCorrect</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-EmployeeDirectorySuite" title="com.employeedirectory.tests.SearchEdgeCasesTest" class="method navigator-link" hash-for-method="whitespaceOnlyQueryReturnsNoMatches">whitespaceOnlyQueryReturnsNoMatches</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-EmployeeDirectorySuite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-EmployeeDirectorySuite" class="panel EmployeeDirectorySuite">
+          <div class="suite-EmployeeDirectorySuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.employeedirectory.tests.SearchByNameTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="fullNameCaseInsensitiveMatch">
+                  </a> <!-- fullNameCaseInsensitiveMatch -->
+                  <span class="method-name">fullNameCaseInsensitiveMatch</span>
+                  <em>
+(SN-02: Full name, case-insensitive match)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fullNameExactCaseMatch">
+                  </a> <!-- fullNameExactCaseMatch -->
+                  <span class="method-name">fullNameExactCaseMatch</span>
+                  <em>
+(SN-01: Full name, exact case match)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="mixedCasePartialNameMatch">
+                  </a> <!-- mixedCasePartialNameMatch -->
+                  <span class="method-name">mixedCasePartialNameMatch</span>
+                  <em>
+(SN-06: Mixed-case partial name match)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="nameSubstringWithNoMatchReturnsEmpty">
+                  </a> <!-- nameSubstringWithNoMatchReturnsEmpty -->
+                  <span class="method-name">nameSubstringWithNoMatchReturnsEmpty</span>
+                  <em>
+(SN-07: Name substring shared by no one returns empty)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="partialNameMatchFirstNameOnly">
+                  </a> <!-- partialNameMatchFirstNameOnly -->
+                  <span class="method-name">partialNameMatchFirstNameOnly</span>
+                  <em>
+(SN-04: Partial name match, first name only)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="partialNameMatchLastNameOnly">
+                  </a> <!-- partialNameMatchLastNameOnly -->
+                  <span class="method-name">partialNameMatchLastNameOnly</span>
+                  <em>
+(SN-05: Partial name match, last name only)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="partialNameMatchMiddleOfString">
+                  </a> <!-- partialNameMatchMiddleOfString -->
+                  <span class="method-name">partialNameMatchMiddleOfString</span>
+                  <em>
+(SN-03: Partial/substring name match (middle of string))                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-EmployeeDirectorySuite-class-passed -->
+          <div class="suite-EmployeeDirectorySuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.employeedirectory.tests.PageLoadRenderingTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="allEmployeesRenderOnInitialLoad">
+                  </a> <!-- allEmployeesRenderOnInitialLoad -->
+                  <span class="method-name">allEmployeesRenderOnInitialLoad</span>
+                  <em>
+(PL-02: All employees render on initial load)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="pageLoadsWithTitleAndSearchBox">
+                  </a> <!-- pageLoadsWithTitleAndSearchBox -->
+                  <span class="method-name">pageLoadsWithTitleAndSearchBox</span>
+                  <em>
+(PL-01: Page loads with title and search box)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="rowCellValuesMatchFixtureData">
+                  </a> <!-- rowCellValuesMatchFixtureData -->
+                  <span class="method-name">rowCellValuesMatchFixtureData</span>
+                  <em>
+(PL-04: Row cell values match fixture data exactly)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchBoxIsEmptyByDefault">
+                  </a> <!-- searchBoxIsEmptyByDefault -->
+                  <span class="method-name">searchBoxIsEmptyByDefault</span>
+                  <em>
+(PL-05: Search box is empty by default)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tableHeaderColumnsAreCorrect">
+                  </a> <!-- tableHeaderColumnsAreCorrect -->
+                  <span class="method-name">tableHeaderColumnsAreCorrect</span>
+                  <em>
+(PL-03: Table header columns are correct)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-EmployeeDirectorySuite-class-passed -->
+          <div class="suite-EmployeeDirectorySuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.employeedirectory.tests.SearchEdgeCasesTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="clearingSearchAfterNoMatchRestoresFullList">
+                  </a> <!-- clearingSearchAfterNoMatchRestoresFullList -->
+                  <span class="method-name">clearingSearchAfterNoMatchRestoresFullList</span>
+                  <em>
+(SE-07: Clearing search after no-match state restores full list)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyQueryShowsFullList">
+                  </a> <!-- emptyQueryShowsFullList -->
+                  <span class="method-name">emptyQueryShowsFullList</span>
+                  <em>
+(SE-01: Empty query shows full list)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="leadingTrailingSpacesAroundValidTermNoMatch">
+                  </a> <!-- leadingTrailingSpacesAroundValidTermNoMatch -->
+                  <span class="method-name">leadingTrailingSpacesAroundValidTermNoMatch</span>
+                  <em>
+(SE-08: Leading/trailing spaces around a valid term reduce/change match)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="numericQueryDoesNotMatchOnId">
+                  </a> <!-- numericQueryDoesNotMatchOnId -->
+                  <span class="method-name">numericQueryDoesNotMatchOnId</span>
+                  <em>
+(SE-05: Numeric query does not match on id)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="progressiveTypingNarrowsResults">
+                  </a> <!-- progressiveTypingNarrowsResults -->
+                  <span class="method-name">progressiveTypingNarrowsResults</span>
+                  <em>
+(SE-06: Progressive typing narrows results incrementally)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="queryMatchingMultipleRows">
+                  </a> <!-- queryMatchingMultipleRows -->
+                  <span class="method-name">queryMatchingMultipleRows</span>
+                  <em>
+(SE-03: Query matching multiple rows across name and department)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="queryWithRegexLikeCharactersDoesNotError">
+                  </a> <!-- queryWithRegexLikeCharactersDoesNotError -->
+                  <span class="method-name">queryWithRegexLikeCharactersDoesNotError</span>
+                  <em>
+(SE-04: Query with special/regex-like characters does not error)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="whitespaceOnlyQueryReturnsNoMatches">
+                  </a> <!-- whitespaceOnlyQueryReturnsNoMatches -->
+                  <span class="method-name">whitespaceOnlyQueryReturnsNoMatches</span>
+                  <em>
+(SE-02: Whitespace-only query returns no matches)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-EmployeeDirectorySuite-class-passed -->
+          <div class="suite-EmployeeDirectorySuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.employeedirectory.tests.SearchByDepartmentTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="departmentQueryWithNoMatches">
+                  </a> <!-- departmentQueryWithNoMatches -->
+                  <span class="method-name">departmentQueryWithNoMatches</span>
+                  <em>
+(SD-05: Department query with no matches)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="departmentSubstringMatchMixedCase">
+                  </a> <!-- departmentSubstringMatchMixedCase -->
+                  <span class="method-name">departmentSubstringMatchMixedCase</span>
+                  <em>
+(SD-04: Department substring match, mixed case)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="exactDepartmentMatchCaseInsensitive">
+                  </a> <!-- exactDepartmentMatchCaseInsensitive -->
+                  <span class="method-name">exactDepartmentMatchCaseInsensitive</span>
+                  <em>
+(SD-02: Exact department match, case-insensitive)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="exactDepartmentMatchSingleResult">
+                  </a> <!-- exactDepartmentMatchSingleResult -->
+                  <span class="method-name">exactDepartmentMatchSingleResult</span>
+                  <em>
+(SD-01: Exact department match, single result)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="partialDepartmentSubstringMatch">
+                  </a> <!-- partialDepartmentSubstringMatch -->
+                  <span class="method-name">partialDepartmentSubstringMatch</span>
+                  <em>
+(SD-03: Partial department substring match)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-EmployeeDirectorySuite-class-passed -->
+        </div> <!-- panel EmployeeDirectorySuite -->
+        <div panel-name="test-xml-EmployeeDirectorySuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\RaghaviAvuduri\Automation\Employee-directory-code\employee-directory-brownfield\docs\selenium-tests\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;EmployeeDirectorySuite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;PageLoadRendering&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.employeedirectory.tests.PageLoadRenderingTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- PageLoadRendering --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;SearchByName&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.employeedirectory.tests.SearchByNameTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- SearchByName --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;SearchByDepartment&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.employeedirectory.tests.SearchByDepartmentTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- SearchByDepartment --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;SearchEdgeCases&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.employeedirectory.tests.SearchEdgeCasesTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- SearchEdgeCases --&gt;
+&lt;/suite&gt; &lt;!-- EmployeeDirectorySuite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-EmployeeDirectorySuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for EmployeeDirectorySuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">PageLoadRendering (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">SearchByName (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">SearchByDepartment (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">SearchEdgeCases (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-EmployeeDirectorySuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for EmployeeDirectorySuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-EmployeeDirectorySuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for EmployeeDirectorySuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_EmployeeDirectorySuite');
+function tableData_EmployeeDirectorySuite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(25);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'progressiveTypingNarrowsResults')
+data.setCell(0, 2, 'com.employeedirectory.tests.SearchEdgeCasesTest')
+data.setCell(0, 3, 1030);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'clearingSearchAfterNoMatchRestoresFullList')
+data.setCell(1, 2, 'com.employeedirectory.tests.SearchEdgeCasesTest')
+data.setCell(1, 3, 555);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'emptyQueryShowsFullList')
+data.setCell(2, 2, 'com.employeedirectory.tests.SearchEdgeCasesTest')
+data.setCell(2, 3, 539);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'queryWithRegexLikeCharactersDoesNotError')
+data.setCell(3, 2, 'com.employeedirectory.tests.SearchEdgeCasesTest')
+data.setCell(3, 3, 530);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'queryMatchingMultipleRows')
+data.setCell(4, 2, 'com.employeedirectory.tests.SearchEdgeCasesTest')
+data.setCell(4, 3, 338);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'exactDepartmentMatchSingleResult')
+data.setCell(5, 2, 'com.employeedirectory.tests.SearchByDepartmentTest')
+data.setCell(5, 3, 337);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'fullNameExactCaseMatch')
+data.setCell(6, 2, 'com.employeedirectory.tests.SearchByNameTest')
+data.setCell(6, 3, 331);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'partialNameMatchLastNameOnly')
+data.setCell(7, 2, 'com.employeedirectory.tests.SearchByNameTest')
+data.setCell(7, 3, 320);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'partialNameMatchFirstNameOnly')
+data.setCell(8, 2, 'com.employeedirectory.tests.SearchByNameTest')
+data.setCell(8, 3, 305);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'partialDepartmentSubstringMatch')
+data.setCell(9, 2, 'com.employeedirectory.tests.SearchByDepartmentTest')
+data.setCell(9, 3, 303);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'fullNameCaseInsensitiveMatch')
+data.setCell(10, 2, 'com.employeedirectory.tests.SearchByNameTest')
+data.setCell(10, 3, 302);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'exactDepartmentMatchCaseInsensitive')
+data.setCell(11, 2, 'com.employeedirectory.tests.SearchByDepartmentTest')
+data.setCell(11, 3, 296);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'mixedCasePartialNameMatch')
+data.setCell(12, 2, 'com.employeedirectory.tests.SearchByNameTest')
+data.setCell(12, 3, 295);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'departmentSubstringMatchMixedCase')
+data.setCell(13, 2, 'com.employeedirectory.tests.SearchByDepartmentTest')
+data.setCell(13, 3, 289);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'partialNameMatchMiddleOfString')
+data.setCell(14, 2, 'com.employeedirectory.tests.SearchByNameTest')
+data.setCell(14, 3, 285);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'departmentQueryWithNoMatches')
+data.setCell(15, 2, 'com.employeedirectory.tests.SearchByDepartmentTest')
+data.setCell(15, 3, 282);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'whitespaceOnlyQueryReturnsNoMatches')
+data.setCell(16, 2, 'com.employeedirectory.tests.SearchEdgeCasesTest')
+data.setCell(16, 3, 280);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'nameSubstringWithNoMatchReturnsEmpty')
+data.setCell(17, 2, 'com.employeedirectory.tests.SearchByNameTest')
+data.setCell(17, 3, 276);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'leadingTrailingSpacesAroundValidTermNoMatch')
+data.setCell(18, 2, 'com.employeedirectory.tests.SearchEdgeCasesTest')
+data.setCell(18, 3, 276);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'numericQueryDoesNotMatchOnId')
+data.setCell(19, 2, 'com.employeedirectory.tests.SearchEdgeCasesTest')
+data.setCell(19, 3, 270);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'allEmployeesRenderOnInitialLoad')
+data.setCell(20, 2, 'com.employeedirectory.tests.PageLoadRenderingTest')
+data.setCell(20, 3, 115);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'rowCellValuesMatchFixtureData')
+data.setCell(21, 2, 'com.employeedirectory.tests.PageLoadRenderingTest')
+data.setCell(21, 3, 99);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'tableHeaderColumnsAreCorrect')
+data.setCell(22, 2, 'com.employeedirectory.tests.PageLoadRenderingTest')
+data.setCell(22, 3, 79);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'pageLoadsWithTitleAndSearchBox')
+data.setCell(23, 2, 'com.employeedirectory.tests.PageLoadRenderingTest')
+data.setCell(23, 3, 35);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'searchBoxIsEmptyByDefault')
+data.setCell(24, 2, 'com.employeedirectory.tests.PageLoadRenderingTest')
+data.setCell(24, 3, 13);
+window.suiteTableData['EmployeeDirectorySuite']= { tableData: data, tableDiv: 'times-div-EmployeeDirectorySuite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <div id="times-div-EmployeeDirectorySuite">
+              </div> <!-- times-div-EmployeeDirectorySuite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-EmployeeDirectorySuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for EmployeeDirectorySuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-EmployeeDirectorySuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-EmployeeDirectorySuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.employeedirectory.tests.PageLoadRenderingTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">746 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">allEmployeesRenderOnInitialLoad</span>
+                <span class="method-start">1982 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">2098 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">2173 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">pageLoadsWithTitleAndSearchBox</span>
+                <span class="method-start">3157 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">3192 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">3286 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">rowCellValuesMatchFixtureData</span>
+                <span class="method-start">4283 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">4382 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">4453 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">searchBoxIsEmptyByDefault</span>
+                <span class="method-start">5470 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">5484 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">5552 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tableHeaderColumnsAreCorrect</span>
+                <span class="method-start">6595 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">6675 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.employeedirectory.tests.SearchByNameTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass</span>
+                <span class="method-start">6749 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">6763 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">fullNameCaseInsensitiveMatch</span>
+                <span class="method-start">7721 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">8023 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">8123 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">fullNameExactCaseMatch</span>
+                <span class="method-start">9121 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">9452 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">9555 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">mixedCasePartialNameMatch</span>
+                <span class="method-start">10554 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">10849 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">10949 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">nameSubstringWithNoMatchReturnsEmpty</span>
+                <span class="method-start">11953 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">12230 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">12316 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">partialNameMatchFirstNameOnly</span>
+                <span class="method-start">13320 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">13625 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">13713 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">partialNameMatchLastNameOnly</span>
+                <span class="method-start">14716 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">15037 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">15135 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">partialNameMatchMiddleOfString</span>
+                <span class="method-start">16125 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">16411 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.employeedirectory.tests.SearchByDepartmentTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass</span>
+                <span class="method-start">16516 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">16529 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">departmentQueryWithNoMatches</span>
+                <span class="method-start">17529 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">17811 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">17892 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">departmentSubstringMatchMixedCase</span>
+                <span class="method-start">18878 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">19167 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">19234 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">exactDepartmentMatchCaseInsensitive</span>
+                <span class="method-start">20240 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">20536 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">20638 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">exactDepartmentMatchSingleResult</span>
+                <span class="method-start">21637 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">21974 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">22052 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">partialDepartmentSubstringMatch</span>
+                <span class="method-start">23019 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">23322 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.employeedirectory.tests.SearchEdgeCasesTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass</span>
+                <span class="method-start">23430 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">23445 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">clearingSearchAfterNoMatchRestoresFullList</span>
+                <span class="method-start">24428 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">24983 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">25058 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">emptyQueryShowsFullList</span>
+                <span class="method-start">26010 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">26549 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">26669 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">leadingTrailingSpacesAroundValidTermNoMatch</span>
+                <span class="method-start">27660 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">27937 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">28042 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">numericQueryDoesNotMatchOnId</span>
+                <span class="method-start">29631 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">29901 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">30028 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">progressiveTypingNarrowsResults</span>
+                <span class="method-start">31012 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">32044 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">32127 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">queryMatchingMultipleRows</span>
+                <span class="method-start">33128 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">33466 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">33566 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">queryWithRegexLikeCharactersDoesNotError</span>
+                <span class="method-start">34565 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">35095 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpDriver</span>
+                <span class="method-start">35214 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">whitespaceOnlyQueryReturnsNoMatches</span>
+                <span class="method-start">36190 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownDriver</span>
+                <span class="method-start">36470 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
