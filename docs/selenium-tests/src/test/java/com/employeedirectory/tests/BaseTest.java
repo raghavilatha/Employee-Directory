@@ -13,11 +13,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.net.InetSocketAddress;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Common test setup: launches headless Chrome and serves the app under test
@@ -78,27 +79,61 @@ public abstract class BaseTest {
     }
 
     /**
-     * Resolves the path to employee-directory-brownfield/ relative to this
-     * Maven module (docs/selenium-tests). Can be overridden with the
-     * "app.dir" system property (-Dapp.dir=/absolute/path).
+     * Resolves the path to the web app root relative to this Maven module
+     * (docs/selenium-tests). In this repository the app lives at the repo root,
+     * so the resolver checks the module directory and its parent directories for
+     * index.html. Can be overridden with the "app.dir" system property
+     * (-Dapp.dir=/absolute/path).
      */
     private static Path resolveAppDir() {
+        String appDir = System.getProperty("app.dir");
 
-    String appDir = System.getProperty("app.dir");
+        if (appDir != null && !appDir.isBlank()) {
+            Path configuredRoot = Paths.get(appDir).toAbsolutePath().normalize();
+            Path configuredIndex = configuredRoot.resolve("index.html");
+            if (Files.isRegularFile(configuredIndex)) {
+                return configuredRoot;
+            }
+            throw new IllegalStateException(
+                    "Could not locate index.html under configured app dir " + configuredRoot);
+        }
 
-    Path root = (appDir != null && !appDir.isBlank())
-            ? Paths.get(appDir)
-            : Paths.get("").toAbsolutePath();
+        Path start = Paths.get(System.getProperty("user.dir", ""))
+                .toAbsolutePath()
+                .normalize();
+        for (Path candidate : candidateRoots(start)) {
+            Path indexFile = candidate.resolve("index.html");
+            if (Files.isRegularFile(indexFile)) {
+                return candidate;
+            }
+        }
 
-    Path indexFile = root.resolve("index.html");
+        Path siblingAppDir = start.resolve("../employee-directory-brownfield").normalize();
+        if (Files.isRegularFile(siblingAppDir.resolve("index.html"))) {
+            return siblingAppDir;
+        }
 
-    if (!Files.exists(indexFile)) {
+        Path repoRootCandidate = start.getParent() != null
+                ? start.getParent().resolve("employee-directory-brownfield")
+                : null;
+        if (repoRootCandidate != null && Files.isRegularFile(repoRootCandidate.resolve("index.html"))) {
+            return repoRootCandidate;
+        }
+
         throw new IllegalStateException(
-                "Could not locate index.html under " + root);
+                "Could not locate index.html under " + start + " or its parent directories. "
+                        + "Run Maven from the repo root or docs/selenium-tests, or set -Dapp.dir=/path/to/app");
     }
 
-    return root;
-}
+    private static List<Path> candidateRoots(Path start) {
+        List<Path> candidates = new ArrayList<>();
+        Path current = start;
+        while (current != null) {
+            candidates.add(current);
+            current = current.getParent();
+        }
+        return candidates;
+    }
 
     private static HttpHandler staticFileHandler(Path appDir) {
         return (HttpExchange exchange) -> {
@@ -116,7 +151,7 @@ public abstract class BaseTest {
             exchange.getResponseHeaders().set("Content-Type", contentType);
             byte[] bytes = Files.readAllBytes(file.toPath());
             exchange.sendResponseHeaders(200, bytes.length);
-            try (var os = exchange.getResponseBody(); FileInputStream in = new FileInputStream(file)) {
+            try (var os = exchange.getResponseBody()) {
                 os.write(bytes);
             }
         };
