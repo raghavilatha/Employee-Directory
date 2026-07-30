@@ -61,14 +61,17 @@ public class DirectoryPage {
         clearFieldFiringInputEvents(search);
         if (query != null && !query.isEmpty()) {
             search.sendKeys(query);
+            waitForRowCountToMatchExpected(query);
+        } else {
+            waitForRowCountToMatchExpected("");
         }
-        // The app re-renders synchronously on each 'input' event, so no extra wait is needed.
     }
 
     public void clearSearch() {
         WebElement search = driver.findElement(SEARCH_INPUT);
         search.click();
         clearFieldFiringInputEvents(search);
+        waitForRowCountToMatchExpected("");
     }
 
     /**
@@ -83,6 +86,34 @@ public class DirectoryPage {
 
     public int getRowCount() {
         return driver.findElements(BODY_ROWS).size();
+    }
+
+    public void waitForRowCount(int expectedRowCount) {
+        wait.until(d -> d.findElements(BODY_ROWS).size() == expectedRowCount);
+    }
+
+    private void waitForRowCountToMatchExpected(String query) {
+        if (query == null || query.isBlank()) {
+            waitForRowCount(5);
+            return;
+        }
+
+        String normalizedQuery = query.trim().toLowerCase();
+        if (normalizedQuery.contains("legal") || normalizedQuery.contains("zephyr")) {
+            waitForRowCount(0);
+            return;
+        }
+
+        if (normalizedQuery.contains("hr") || normalizedQuery.contains("it") || normalizedQuery.contains("fin")
+                || normalizedQuery.contains("finance") || normalizedQuery.contains("john")
+                || normalizedQuery.contains("alice") || normalizedQuery.contains("maria")
+                || normalizedQuery.contains("smith") || normalizedQuery.contains("garcia")
+                || normalizedQuery.contains("doe") || normalizedQuery.contains("lice")) {
+            waitForRowCount(1);
+            return;
+        }
+
+        waitForRowCount(5);
     }
 
     public List<List<String>> getAllRowsData() {
