@@ -106,6 +106,16 @@ public abstract class BaseTest {
             }
         }
 
+        Path siblingAppDir = start.resolve("..\employee-directory-brownfield").normalize();
+        if (Files.isRegularFile(siblingAppDir.resolve("index.html"))) {
+            return siblingAppDir;
+        }
+
+        Path repoRootCandidate = start.getParent() != null ? start.getParent().resolve("employee-directory-brownfield") : null;
+        if (repoRootCandidate != null && Files.isRegularFile(repoRootCandidate.resolve("index.html"))) {
+            return repoRootCandidate;
+        }
+
         throw new IllegalStateException(
                 "Could not locate index.html under " + start + " or its parent directories. "
                         + "Run Maven from the repo root or docs/selenium-tests, or set -Dapp.dir=/path/to/app");

@@ -49,6 +49,28 @@ public class BaseTestPathResolutionTest {
         }
     }
 
+    @Test
+    public void resolvesAppDirFromSiblingEmployeeDirectoryBrownfieldFolder() throws Exception {
+        Path tempRoot = Files.createTempDirectory("repo-root-test");
+        Path moduleDir = tempRoot.resolve("docs").resolve("selenium-tests");
+        Files.createDirectories(moduleDir);
+        Path appDir = tempRoot.resolve("employee-directory-brownfield");
+        Files.createDirectories(appDir);
+        Files.writeString(appDir.resolve("index.html"), "<html></html>");
+
+        System.clearProperty("app.dir");
+        System.setProperty("user.dir", moduleDir.toString());
+
+        try {
+            Path resolved = invokeResolveAppDir();
+            assertTrue(Files.isSameFile(resolved, appDir.toAbsolutePath().normalize()));
+        } finally {
+            System.clearProperty("app.dir");
+            System.clearProperty("user.dir");
+            deleteRecursively(tempRoot);
+        }
+    }
+
     private static Path invokeResolveAppDir() throws Exception {
         Method method = BaseTest.class.getDeclaredMethod("resolveAppDir");
         method.setAccessible(true);
