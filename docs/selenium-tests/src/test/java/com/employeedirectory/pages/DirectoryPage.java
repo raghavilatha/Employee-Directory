@@ -72,6 +72,11 @@ public class DirectoryPage {
         waitForTableToStabilize();
     }
 
+    public void searchAndWaitForRowCount(String query, int expectedRowCount) {
+        typeSearch(query);
+        waitForRowCount(expectedRowCount);
+    }
+
     /**
      * WebElement#clear() does not reliably dispatch an 'input' event in
      * Chrome, which the app relies on to re-render. Selecting all text and

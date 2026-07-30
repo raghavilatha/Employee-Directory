@@ -108,7 +108,8 @@ public abstract class BaseTest {
         }
 
         throw new IllegalStateException(
-                "Could not locate index.html under " + start + " or its parent directories");
+                "Could not locate index.html under " + start + " or its parent directories. "
+                        + "Run Maven from the repo root or docs/selenium-tests, or set -Dapp.dir=/path/to/app");
     }
 
     private static List<Path> candidateRoots(Path start) {
