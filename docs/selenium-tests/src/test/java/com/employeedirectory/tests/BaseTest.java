@@ -98,7 +98,9 @@ public abstract class BaseTest {
                     "Could not locate index.html under configured app dir " + configuredRoot);
         }
 
-        Path start = Paths.get(System.getProperty("user.dir", "")).toAbsolutePath().normalize();
+        Path start = Paths.get(System.getProperty("user.dir", ""))
+                .toAbsolutePath()
+                .normalize();
         for (Path candidate : candidateRoots(start)) {
             Path indexFile = candidate.resolve("index.html");
             if (Files.isRegularFile(indexFile)) {
@@ -111,7 +113,9 @@ public abstract class BaseTest {
             return siblingAppDir;
         }
 
-        Path repoRootCandidate = start.getParent() != null ? start.getParent().resolve("employee-directory-brownfield") : null;
+        Path repoRootCandidate = start.getParent() != null
+                ? start.getParent().resolve("employee-directory-brownfield")
+                : null;
         if (repoRootCandidate != null && Files.isRegularFile(repoRootCandidate.resolve("index.html"))) {
             return repoRootCandidate;
         }
