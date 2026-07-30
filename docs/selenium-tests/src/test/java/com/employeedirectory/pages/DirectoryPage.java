@@ -61,17 +61,15 @@ public class DirectoryPage {
         clearFieldFiringInputEvents(search);
         if (query != null && !query.isEmpty()) {
             search.sendKeys(query);
-            waitForRowCountToMatchExpected(query);
-        } else {
-            waitForRowCountToMatchExpected("");
         }
+        waitForTableToStabilize();
     }
 
     public void clearSearch() {
         WebElement search = driver.findElement(SEARCH_INPUT);
         search.click();
         clearFieldFiringInputEvents(search);
-        waitForRowCountToMatchExpected("");
+        waitForTableToStabilize();
     }
 
     /**
@@ -88,32 +86,33 @@ public class DirectoryPage {
         return driver.findElements(BODY_ROWS).size();
     }
 
+    public void waitForTableToStabilize() {
+        wait.until(d -> {
+            int initialCount = d.findElements(BODY_ROWS).size();
+            try {
+                Thread.sleep(150);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return false;
+            }
+            int stabilizedCount = d.findElements(BODY_ROWS).size();
+            return initialCount == stabilizedCount;
+        });
+    }
+
     public void waitForRowCount(int expectedRowCount) {
         wait.until(d -> d.findElements(BODY_ROWS).size() == expectedRowCount);
     }
 
-    private void waitForRowCountToMatchExpected(String query) {
-        if (query == null || query.isBlank()) {
-            waitForRowCount(5);
-            return;
-        }
+    public void waitForEmptyResults() {
+        waitForRowCount(0);
+    }
 
-        String normalizedQuery = query.trim().toLowerCase();
-        if (normalizedQuery.contains("legal") || normalizedQuery.contains("zephyr")) {
-            waitForRowCount(0);
-            return;
-        }
-
-        if (normalizedQuery.contains("hr") || normalizedQuery.contains("it") || normalizedQuery.contains("fin")
-                || normalizedQuery.contains("finance") || normalizedQuery.contains("john")
-                || normalizedQuery.contains("alice") || normalizedQuery.contains("maria")
-                || normalizedQuery.contains("smith") || normalizedQuery.contains("garcia")
-                || normalizedQuery.contains("doe") || normalizedQuery.contains("lice")) {
-            waitForRowCount(1);
-            return;
-        }
-
-        waitForRowCount(5);
+    public void waitForFirstRowContains(String expectedText) {
+        wait.until(d -> {
+            List<WebElement> rows = d.findElements(BODY_ROWS);
+            return !rows.isEmpty() && rows.get(0).getText().contains(expectedText);
+        });
     }
 
     public List<List<String>> getAllRowsData() {
