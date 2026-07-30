@@ -13,7 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.net.InetSocketAddress;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -138,7 +137,7 @@ public abstract class BaseTest {
             exchange.getResponseHeaders().set("Content-Type", contentType);
             byte[] bytes = Files.readAllBytes(file.toPath());
             exchange.sendResponseHeaders(200, bytes.length);
-            try (var os = exchange.getResponseBody(); FileInputStream in = new FileInputStream(file)) {
+            try (var os = exchange.getResponseBody()) {
                 os.write(bytes);
             }
         };
