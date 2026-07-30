@@ -62,13 +62,40 @@ public class DirectoryPage {
         if (query != null && !query.isEmpty()) {
             search.sendKeys(query);
         }
-        // The app re-renders synchronously on each 'input' event, so no extra wait is needed.
+        // Input events can trigger async re-rendering, so callers should wait for
+        // the expected row count or empty state before asserting on the DOM.
+        waitForTableToStabilize();
+    }
+
+    public void typeSearchAndWaitForRowCount(String query, int expectedRowCount) {
+        typeSearch(query);
+        waitForRowCount(expectedRowCount);
+    }
+
+    public void typeSearchAndWaitForEmptyResults(String query) {
+        typeSearch(query);
+        waitForEmptyResults();
     }
 
     public void clearSearch() {
         WebElement search = driver.findElement(SEARCH_INPUT);
         search.click();
         clearFieldFiringInputEvents(search);
+        waitForTableToStabilize();
+    }
+
+    public void clearSearchAndWaitForRowCount(int expectedRowCount) {
+        clearSearch();
+        waitForRowCount(expectedRowCount);
+    }
+
+    public void clearSearchAndWaitForEmptyResults() {
+        clearSearch();
+        waitForEmptyResults();
+    }
+
+    public void searchAndWaitForRowCount(String query, int expectedRowCount) {
+        typeSearchAndWaitForRowCount(query, expectedRowCount);
     }
 
     /**
@@ -83,6 +110,35 @@ public class DirectoryPage {
 
     public int getRowCount() {
         return driver.findElements(BODY_ROWS).size();
+    }
+
+    public void waitForTableToStabilize() {
+        wait.until(d -> {
+            int initialCount = d.findElements(BODY_ROWS).size();
+            try {
+                Thread.sleep(150);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return false;
+            }
+            int stabilizedCount = d.findElements(BODY_ROWS).size();
+            return initialCount == stabilizedCount;
+        });
+    }
+
+    public void waitForRowCount(int expectedRowCount) {
+        wait.until(d -> d.findElements(BODY_ROWS).size() == expectedRowCount);
+    }
+
+    public void waitForEmptyResults() {
+        waitForRowCount(0);
+    }
+
+    public void waitForFirstRowContains(String expectedText) {
+        wait.until(d -> {
+            List<WebElement> rows = d.findElements(BODY_ROWS);
+            return !rows.isEmpty() && rows.get(0).getText().contains(expectedText);
+        });
     }
 
     public List<List<String>> getAllRowsData() {

@@ -13,7 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.net.InetSocketAddress;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -78,27 +77,37 @@ public abstract class BaseTest {
     }
 
     /**
-     * Resolves the path to employee-directory-brownfield/ relative to this
-     * Maven module (docs/selenium-tests). Can be overridden with the
-     * "app.dir" system property (-Dapp.dir=/absolute/path).
+     * Resolves the path to the web app root. The app lives two levels above this
+     * Maven module (docs/selenium-tests → repo root), so the resolver walks up
+     * from user.dir until it finds index.html, up to 6 levels. Override with
+     * -Dapp.dir=/absolute/path when running from an unusual location.
      */
     private static Path resolveAppDir() {
+        String appDir = System.getProperty("app.dir");
 
-    String appDir = System.getProperty("app.dir");
+        if (appDir != null && !appDir.isBlank()) {
+            Path configuredRoot = Paths.get(appDir).toAbsolutePath().normalize();
+            if (Files.isRegularFile(configuredRoot.resolve("index.html"))) {
+                return configuredRoot;
+            }
+            throw new IllegalStateException(
+                    "Could not locate index.html under configured app dir " + configuredRoot);
+        }
 
-    Path root = (appDir != null && !appDir.isBlank())
-            ? Paths.get(appDir)
-            : Paths.get("").toAbsolutePath();
+        Path start = Paths.get(System.getProperty("user.dir", ""))
+                .toAbsolutePath()
+                .normalize();
+        Path current = start;
+        for (int i = 0; i < 6 && current != null; i++, current = current.getParent()) {
+            if (Files.isRegularFile(current.resolve("index.html"))) {
+                return current;
+            }
+        }
 
-    Path indexFile = root.resolve("index.html");
-
-    if (!Files.exists(indexFile)) {
         throw new IllegalStateException(
-                "Could not locate index.html under " + root);
+                "Could not locate index.html within 6 levels above " + start + ". "
+                        + "Run Maven from the repo root or docs/selenium-tests, or set -Dapp.dir=/path/to/app");
     }
-
-    return root;
-}
 
     private static HttpHandler staticFileHandler(Path appDir) {
         return (HttpExchange exchange) -> {
@@ -114,10 +123,10 @@ public abstract class BaseTest {
             }
             String contentType = contentTypeFor(file.getName());
             exchange.getResponseHeaders().set("Content-Type", contentType);
-            byte[] bytes = Files.readAllBytes(file.toPath());
-            exchange.sendResponseHeaders(200, bytes.length);
-            try (var os = exchange.getResponseBody(); FileInputStream in = new FileInputStream(file)) {
-                os.write(bytes);
+            long fileSize = Files.size(file.toPath());
+            exchange.sendResponseHeaders(200, fileSize);
+            try (var os = exchange.getResponseBody()) {
+                Files.copy(file.toPath(), os);
             }
         };
     }
