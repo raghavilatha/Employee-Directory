@@ -15,20 +15,19 @@ public class SearchEdgeCasesTest extends BaseTest {
         directoryPage.searchAndWaitForRowCount("Alice", 1);
         Assert.assertEquals(directoryPage.getRowCount(), 1);
 
-        directoryPage.clearSearch();
-        directoryPage.waitForRowCount(3);
+        directoryPage.clearSearchAndWaitForRowCount(3);
         Assert.assertEquals(directoryPage.getRowCount(), 3);
     }
 
     @Test(description = "SE-02: Whitespace-only query returns no matches")
     public void whitespaceOnlyQueryReturnsNoMatches() {
-        directoryPage.searchAndWaitForRowCount("   ", 0);
+        directoryPage.typeSearchAndWaitForEmptyResults("   ");
         Assert.assertTrue(directoryPage.isTableBodyEmpty());
     }
 
     @Test(description = "SE-03: Query matching multiple rows across name and department")
     public void queryMatchingMultipleRows() {
-        directoryPage.searchAndWaitForRowCount("a", 2);
+        directoryPage.typeSearchAndWaitForRowCount("a", 2);
         Assert.assertEquals(directoryPage.getRowCount(), 2);
         List<String> names = directoryPage.getColumn(1);
         Assert.assertTrue(names.contains("Alice Smith"));
@@ -38,28 +37,27 @@ public class SearchEdgeCasesTest extends BaseTest {
 
     @Test(description = "SE-04: Query with special/regex-like characters does not error")
     public void queryWithRegexLikeCharactersDoesNotError() {
-        directoryPage.searchAndWaitForRowCount(".*", 0);
+        directoryPage.typeSearchAndWaitForEmptyResults(".*");
         Assert.assertTrue(directoryPage.isTableBodyEmpty());
         // Confirm the page is still responsive (no uncaught JS error broke rendering).
-        directoryPage.clearSearch();
-        directoryPage.waitForRowCount(3);
+        directoryPage.clearSearchAndWaitForRowCount(3);
         Assert.assertEquals(directoryPage.getRowCount(), 3);
     }
 
     @Test(description = "SE-05: Numeric query does not match on id")
     public void numericQueryDoesNotMatchOnId() {
-        directoryPage.searchAndWaitForRowCount("101", 0);
+        directoryPage.typeSearchAndWaitForEmptyResults("101");
         Assert.assertTrue(directoryPage.isTableBodyEmpty());
     }
 
     @Test(description = "SE-06: Progressive typing narrows results incrementally")
     public void progressiveTypingNarrowsResults() {
-        directoryPage.searchAndWaitForRowCount("A", 2);
+        directoryPage.typeSearchAndWaitForRowCount("A", 2);
         Assert.assertTrue(directoryPage.getRowCount() >= 1);
 
-        directoryPage.searchAndWaitForRowCount("Al", 1);
-        directoryPage.searchAndWaitForRowCount("Ali", 1);
-        directoryPage.searchAndWaitForRowCount("Alice", 1);
+        directoryPage.typeSearchAndWaitForRowCount("Al", 1);
+        directoryPage.typeSearchAndWaitForRowCount("Ali", 1);
+        directoryPage.typeSearchAndWaitForRowCount("Alice", 1);
 
         Assert.assertEquals(directoryPage.getRowCount(), 1);
         Assert.assertEquals(directoryPage.getColumn(1).get(0), "Alice Smith");
@@ -67,17 +65,16 @@ public class SearchEdgeCasesTest extends BaseTest {
 
     @Test(description = "SE-07: Clearing search after no-match state restores full list")
     public void clearingSearchAfterNoMatchRestoresFullList() {
-        directoryPage.searchAndWaitForRowCount("Zephyr", 0);
+        directoryPage.typeSearchAndWaitForEmptyResults("Zephyr");
         Assert.assertTrue(directoryPage.isTableBodyEmpty());
 
-        directoryPage.clearSearch();
-        directoryPage.waitForRowCount(3);
+        directoryPage.clearSearchAndWaitForRowCount(3);
         Assert.assertEquals(directoryPage.getRowCount(), 3);
     }
 
     @Test(description = "SE-08: Leading/trailing spaces around a valid term reduce/change match")
     public void leadingTrailingSpacesAroundValidTermNoMatch() {
-        directoryPage.searchAndWaitForRowCount(" Alice ", 0);
+        directoryPage.typeSearchAndWaitForEmptyResults(" Alice ");
         Assert.assertTrue(directoryPage.isTableBodyEmpty());
     }
 }

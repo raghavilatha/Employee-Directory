@@ -62,7 +62,19 @@ public class DirectoryPage {
         if (query != null && !query.isEmpty()) {
             search.sendKeys(query);
         }
+        // Input events can trigger async re-rendering, so callers should wait for
+        // the expected row count or empty state before asserting on the DOM.
         waitForTableToStabilize();
+    }
+
+    public void typeSearchAndWaitForRowCount(String query, int expectedRowCount) {
+        typeSearch(query);
+        waitForRowCount(expectedRowCount);
+    }
+
+    public void typeSearchAndWaitForEmptyResults(String query) {
+        typeSearch(query);
+        waitForEmptyResults();
     }
 
     public void clearSearch() {
@@ -72,9 +84,18 @@ public class DirectoryPage {
         waitForTableToStabilize();
     }
 
-    public void searchAndWaitForRowCount(String query, int expectedRowCount) {
-        typeSearch(query);
+    public void clearSearchAndWaitForRowCount(int expectedRowCount) {
+        clearSearch();
         waitForRowCount(expectedRowCount);
+    }
+
+    public void clearSearchAndWaitForEmptyResults() {
+        clearSearch();
+        waitForEmptyResults();
+    }
+
+    public void searchAndWaitForRowCount(String query, int expectedRowCount) {
+        typeSearchAndWaitForRowCount(query, expectedRowCount);
     }
 
     /**

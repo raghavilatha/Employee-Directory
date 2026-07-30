@@ -10,7 +10,7 @@ public class SearchByDepartmentTest extends BaseTest {
 
     @Test(description = "SD-01: Exact department match, single result")
     public void exactDepartmentMatchSingleResult() {
-        directoryPage.searchAndWaitForRowCount("HR", 1);
+        directoryPage.typeSearchAndWaitForRowCount("HR", 1);
         Assert.assertEquals(directoryPage.getRowCount(), 1);
         Assert.assertEquals(directoryPage.getColumn(2).get(0), "HR");
         Assert.assertEquals(directoryPage.getColumn(1).get(0), "John Doe");
@@ -18,7 +18,7 @@ public class SearchByDepartmentTest extends BaseTest {
 
     @Test(description = "SD-02: Exact department match, case-insensitive")
     public void exactDepartmentMatchCaseInsensitive() {
-        directoryPage.searchAndWaitForRowCount("it", 1);
+        directoryPage.typeSearchAndWaitForRowCount("it", 1);
         Assert.assertEquals(directoryPage.getRowCount(), 1);
         Assert.assertEquals(directoryPage.getColumn(2).get(0), "IT");
         Assert.assertEquals(directoryPage.getColumn(1).get(0), "Alice Smith");
@@ -26,21 +26,21 @@ public class SearchByDepartmentTest extends BaseTest {
 
     @Test(description = "SD-03: Partial department substring match")
     public void partialDepartmentSubstringMatch() {
-        directoryPage.searchAndWaitForRowCount("Fin", 1);
+        directoryPage.typeSearchAndWaitForRowCount("Fin", 1);
         Assert.assertEquals(directoryPage.getRowCount(), 1);
         Assert.assertEquals(directoryPage.getColumn(2).get(0), "Finance");
     }
 
     @Test(description = "SD-04: Department substring match, mixed case")
     public void departmentSubstringMatchMixedCase() {
-        directoryPage.searchAndWaitForRowCount("fINANCE", 1);
+        directoryPage.typeSearchAndWaitForRowCount("fINANCE", 1);
         Assert.assertEquals(directoryPage.getRowCount(), 1);
         Assert.assertEquals(directoryPage.getColumn(2).get(0), "Finance");
     }
 
     @Test(description = "SD-05: Department query with no matches")
     public void departmentQueryWithNoMatches() {
-        directoryPage.searchAndWaitForRowCount("Legal", 0);
+        directoryPage.typeSearchAndWaitForEmptyResults("Legal");
         Assert.assertTrue(directoryPage.isTableBodyEmpty());
     }
 }
