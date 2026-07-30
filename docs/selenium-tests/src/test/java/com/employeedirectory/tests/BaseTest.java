@@ -106,7 +106,7 @@ public abstract class BaseTest {
             }
         }
 
-        Path siblingAppDir = start.resolve("..\employee-directory-brownfield").normalize();
+        Path siblingAppDir = start.resolve("../employee-directory-brownfield").normalize();
         if (Files.isRegularFile(siblingAppDir.resolve("index.html"))) {
             return siblingAppDir;
         }
